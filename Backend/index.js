@@ -11,7 +11,7 @@ app.use(express.json())
 app.use("/users",userRouter)
 app.use(auth)
 app.use("/products",productRouter)
-app.listen(process.env.port,async()=>{
+app.listen(8732,async()=>{
   try {
     await connection
     console.log("Server is connected with mongodb") 
@@ -20,5 +20,5 @@ app.listen(process.env.port,async()=>{
   }
 
 
-    console.log(`Server is running at port ${process.env.port}`)
+    console.log(`Server is running at port ${8732}`)
 })
