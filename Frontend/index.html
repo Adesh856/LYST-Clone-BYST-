@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="./css/header&nav.css">
+    <link rel="stylesheet" href="./css/silder.css">
+    <style>
+        * {
+            text-decoration: none;
+            color: bl;
+        }
+
+        section {
+            width: 100%;
+        }
+
+        section img {
+            width: 100%;
+        }
+
+        .Spacediv {
+            border: 2px solid transparent;
+            height: 50px;
+        }
+
+        .ProductDiv {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            width: 99%;
+            margin: auto;
+            border-bottom: 2px solid black;
+            text-transform: uppercase;
+            margin-left: 5px;
+        }
+
+        .ProductDiv img {
+            height: 300px;
+            object-fit: cover;
+            width: 300px;
+        }
+
+        .ProductDiv>div>a {
+            display: flex;
+            width: 100%;
+            border: 2px solid gray;
+            justify-content: space-between;
+        }
+
+        .ProductDiv>div div {
+
+            writing-mode: vertical-lr;
+            /* set the writing mode to vertical */
+            transform: rotate(-180deg);
+            /* rotate the text 180 degrees */
+            text-align: right;
+            /* align the text to the right */
+            /* center the text vertically */
+        }
+
+
+        .border {
+            color: red;
+            font-size: 50px;
+
+        }
+
+        .container-Signup {
+            display: flex;
+            width: 100%;
+            border-top: 2px solid grey;
+            background-color: rgb(202,252,79);
+        }
+        .nonsignup_side {
+            width: 65%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            padding: 50px 50px;
+            gap: 20px 20px;
+            background-color: #F5F4F2;
+        }
+        .nonsignup_side>div{
+            text-align: start;
+        }
+
+        .largefontsize {
+            font-size: 100px;
+        }
+
+        .normalfontsize {
+            font-size: 35px;
+            font-weight: 00;
+        }
+
+        .nonsignup_side h3 {
+            font-weight: normal;
+        }
+
+        .signup_side{
+            font-size: 35px;
+            margin: auto;
+           cursor: pointer;
+            margin-top: 100px;
+            margin-bottom: 100px;
+
+         
+        }
+
+        .signup_side button {
+            font-size: 15px;
+            text-align: center;
+            padding: 5px 20px 5px 20px;
+            background-color: black;
+            color:white;
+            border: none;
+            cursor: pointer;
+        }
+        .mostwanted{
+            display: flex;
+            width: 91.7%;
+            justify-content: space-evenly;
+            align-items: end;
+            
+            padding: 60px;
+        }
+        #mowa{
+            width: 20%;
+            display: flex;
+         
+            transform: rotate(-90deg);
+            justify-content: center;
+            align-items: start  ;
+            margin-bottom: 90px;
+            font-size:  30px;
+        }
+        .contentmostwanted{
+            width: 70%;
+            display: grid;
+            font-weight: bold;font-size: x-large;
+            grid-template-columns: repeat(5,1fr);
+            gap: 10px 20px;
+         
+        }
+        .newspace{
+            border-bottom: 2px solid grey;
+       
+        }
+        .newspace{
+            border-top: 2px solid grey;
+        }
+        /*footer*/
+        footer {
+            background-color: black;
+            color: white;
+            padding: 40px;
+          }
+          
+          .footer-container {
+            display: flex;
+            justify-content: space-between;
+          }
+          
+          .footer-menu {
+            flex-basis: 23%;
+          }
+          
+          footer h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+          }
+          
+          footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+          }
+          
+          footer li {
+            margin-bottom: 10px;
+          }
+          
+          footer a {
+            color:white;
+            text-decoration: none;
+          }
+          
+          footer a:hover {
+            text-decoration: underline;
+          }
+          
+          .app-icon {
+            display: flex;
+            align-items: center;
+          }
+          
+          .app-icon img {
+            width: 70px;
+            height: 70px;
+            margin-right: 10px;
+          }
+          
+    </style>
+
+</head>
+
+<body>
+    <!-- //headers -->
+    <header>
+        <div class="dropdown">
+            <button onclick="toggleDropdown()">Help▾</button>
+            <ul>
+                <li><a href="#">Help center</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </div>
+        <div class="background">
+            <a class="text-decor" href="">SignUp</a>
+            <a class="text-decor" href="">OR</a>
+            <a class="text-decor" href="">SignIn</a>
+        </div>
+    </header>
+
+    <!-- nav-bar -->
+    <nav>
+        <div id="logodiv">
+            <div>
+                <a href=""><img id="logo" src="./images/logo.png" alt=""></a>
+            </div>
+            <div id="wm"><a href="">
+                    <h1>Women</h1>
+                </a>
+                <a href="">
+                    <h1>Men</h1>
+                </a>
+            </div>
+        </div>
+        <div id="SearchBar">
+            <div>
+                <input type="Serach" placeholder="Search...">
+            </div>
+        </div>
+    </nav>
+
+    <!-- section-bar -->
+    <section>
+        <div>
+            <img src="https://cdna.lystit.com/cms/EN_XL_1be4462434.png" alt="">
+        </div>
+        <div class="Spacediv">
+        </div>
+        <div class="ProductDiv">
+            <div> <a href="">
+                    <div>
+                        <h1>DENIM ON DENIM</h1>
+                    </div>
+                    <img src="https://cdna.lystit.com/cms/fcd48cad_2b66_4002_9f12_6e9ad7e6efc1_c7f9d02ae0.png" alt="">
+                </a>
+            </div>
+
+            <div>
+                <a href="">
+                    <div>
+                        <h1>ELEVATED BASIC</h1>
+                    </div>
+                    <img src="https://cdna.lystit.com/cms/62a57ab9_cc2d_49cb_97d5_83fc4e8751c4_9de7020b81.png" alt="">
+                </a>
+            </div>
+            <div>
+                <a href="">
+                    <div>
+                        <h1>BIG BAG ENERGY</h1>
+                    </div>
+                    <img src="https://cdna.lystit.com/cms/b3f1914f_9c86_4308_932d_38e350901307_fecb40b13f.png" alt="">
+                </a>
+            </div>
+            <div>
+                <a href="">
+                    <div>
+                        <h1>Balenciaga</h1>
+                    </div>
+                    <img src="https://cdna.lystit.com/400/500/tr/photos/matchesfashion/6a867ff9/balenciaga--S.jpeg"
+                        alt="">
+                </a>
+            </div>
+            <div>
+                <a href="">
+                    <div>
+                        <h1>FENDI</h1>
+                    </div>
+                    <img src="https://cdna.lystit.com/200/250/tr/photos/giglio/14288b57/fendi-Black-Tote-Bags.jpeg"
+                        alt="">
+                </a>
+            </div>
+            <div>
+                <a href="">
+                    <div>
+                        <h1>LYST_CA_DREAMING</h1>
+                    </div>
+                    <img src="https://cdna.lystit.com/cms/Lyst_CA_Dreaming_600x600_No_Copy_f4872fa27c.jpg" alt="">
+                </a>
+            </div>
+            <div>
+                <a href="">
+                    <div>
+                        <h1>MONCLER</h1>
+                    </div>
+                    <img src="https://cdna.lystit.com/cms/Moncler_Female_mobile_20f6e9fe83.jpg" alt="">
+                </a>
+            </div>
+            <div>
+                <a href="">
+                    <div>
+                        <h1>MODA</h1>
+                    </div>
+                    <img src="https://cdna.lystit.com/cms/HP_Top_Lyst_1_3be80201f9.jpg" alt="">
+                </a>
+            </div>
+        </div>
+        
+        <div class="Spacediv">
+        </div>
+        <div class="Spacediv">
+        </div>
+        <div class="slider-container">
+            <div class="slider">    
+              <div class="slider-item">
+                <a href="">
+                <img src="https://cdn.i-scmp.com/sites/default/files/d8/images/canvas/2022/07/05/a51aab90-e9a5-48ce-a1e7-1584c231f1d2_32722453.jpg  " alt="Slider Image">
+            </a>
+              </div>
+              <div class="slider-item">
+                <a href=""><img src="https://media.sketchfab.com/models/5ab93a0dd3034bff8735576ef827addf/thumbnails/d0bf1cf69efe40d7bce671f694000e7d/41c940f8e2a04624859c2184a1e2f400.jpeg" alt="Slider Image"></a>
+                
+              </div>
+              <div class="slider-item">
+                <a href="">  <img src="https://c4.wallpaperflare.com/wallpaper/122/806/435/vivienne-westwood-belt-badge-wallpaper-preview.jpg" alt="Slider Image"></a>
+              
+              </div>
+              <div class="slider-item">
+                <a href="">  <img src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8c2hvZXN8ZW58MHx8MHx8&w=1000&q=80" alt="Slider Image" ></a>
+              </div>
+              <div class="slider-item">
+                <a href="">  <img src="https://c0.wallpaperflare.com/preview/186/124/897/red-and-white-air-jordan-1-shoe-on-concrete-floor.jpg" ></a>
+              </div>
+              <div class="slider-item">
+                <a href="">  <img src="https://img.etimg.com/thumb/width-1200,height-900,imgsize-680792,resizemode-1,msid-66519128/industry/cons-products/fashion-/-cosmetics-/-jewellery/some-top-end-luxury-businesses-see-gradual-uptick-after-two-years-of-swift-policy-changes.jpg" alt="Slider Image" ></a>
+              </div>
+              <div class="slider-item">
+                <a href="">  <img src="https://api.freelogodesign.org/assets/blog/thumb/20190812082046028ao-dai-art-beautiful-1368614_1176x840.jpg" alt="Slider Image" ></a>
+              </div>
+            </div>
+            <div class="slider-dots"></div>
+          </div>
+          <div class="Spacediv">
+        </div>
+        <div class="Spacediv">
+        </div>
+        <!-- SIGN UP CONATINER -->
+        <div class="container-Signup">
+            <div class="nonsignup_side">
+                <div>
+                    <h1 class="largefontsize">1</h1>
+                    <h1 class="normalfontsize">THE BIGGEST <br> SELECTION</h1>
+                    <h3>Shop over 12,000 brands and <br>stores in one place.
+                        <br>
+                        <br>
+                        Find exactly what you want with powerful search<br> and personal recommendations.
+                    </h3>
+                </div>
+                <div>
+                    <h1 class="largefontsize">2</h1>
+                    <h1 class="normalfontsize">THE HOTTEST <br> PRODUCTS</h1>
+                    <h3>Compare prices and shipping options<br> across thousands of stores.
+                        <br>
+                        <br>
+                        Lyst members are notified when <br>an item goes on sale.
+                    </h3>
+                </div>
+                <div>
+                    <h1 class="largefontsize">3</h1>
+                    <h1 class="normalfontsize">THE BEST <br> PRICES</h1>
+                    <h3>
+                        See what's new and <br>what's trending.
+                        <br>
+                        <br>
+                        Hit the heart to receive alerts on the latest drops <br> from your favourite brands.
+                    </h3>
+                </div>
+            </div>
+            <div class="signup_side">
+                <div>
+                    <h1>SIGN UP <br>FOR <br>SMARTER <br> SHOPPING</h1>
+                    <button>Join ⮕</button>
+                </div>
+            </div>
+        </div>
+        <div class="Spacediv newspace">
+        </div>
+        <!-- mostwanted section -->
+        <div class="mostwanted">
+            <div id="mowa">
+            <h1>MOST WANTED</h1>
+            </div>
+            <div class="contentmostwanted">
+                <a href="">UGG  TASMAN<br> SLIPPERS</a>
+                <a href="">FLEECE <br> TOTE</a>
+                <a href=""> DAISY <br> EARRING</a>
+                <a href="">COMPASS <br> NECKLESS</a>
+                <a href="">MAISON  <br>MARGIELA <br> TABI BOOTS</a>
+                <a href="">KENZO  <br>TIGER <br>
+                    COLLECTIONS  </a>
+                <a href="">ANORAK <br> JACKETS</a>
+                <a href="">GRADIENT <br>SUNGLASSES </a>
+                <a href="">BELTED COATS</a>
+            </div>
+        </div>
+        <div class="Spacediv newspace">
+        </div>
+    </section>
+    <footer>
+        <div class="footer-container">
+          <div class="footer-menu">
+            <h3>Shop</h3>
+            <ul>
+              <li><a href="#">New Arrivals</a></li>
+              <li><a href="#">Women's Clothing</a></li>
+              <li><a href="#">Men's Clothing</a></li>
+              <li><a href="#">Accessories</a></li>
+            </ul>
+          </div>
+          <div class="footer-menu">
+            <h3>Customer Service</h3>
+            <ul>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">FAQs</a></li>
+              <li><a href="#">Shipping</a></li>
+              <li><a href="#">Returns & Exchanges</a></li>
+            </ul>
+          </div>
+          <div class="footer-menu">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Press</a></li>
+            </ul>
+          </div>
+          <div class="stores">
+            <a href=""> <img src="./images/trustpilot.png" alt=""></a>
+            <a href=""><img src="./images/stores.png" alt=""></a>
+          </div>
+          <div class="app-icon">
+            <a href="#">
+              <img  style="background-color:white" src="./images//logo.png" alt="App icon">
+            </a>
+          </div>
+        </div>
+      </footer>
+      
+</body>
+<script src="./js/header&nav.js">
+</script>
+<script src="./js/slider.js"></script>
+
+</html>
+

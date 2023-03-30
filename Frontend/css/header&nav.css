@@ -1,0 +1,111 @@
+*{
+  margin: 0px;    
+  padding: 0px;
+  color: black;
+  text-decoration: none;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown button {
+  color:black;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  font-size:large;
+}
+.dropdown ul {
+  display: none;
+  position: absolute;
+  
+  right: 1px;
+  margin-top: 0;
+  padding-left: 0;
+}
+.dropdown ul li {
+  list-style: none;
+}
+.dropdown ul li a {
+    width: 100%;
+  color: black;
+  display: block;
+  padding: 3px 17px;
+  font-size:large;
+  text-decoration: none;
+}
+.dropdown ul li a:hover {
+  background-color: #f1f1f1;
+}
+.dropdown.open ul {
+  display: block; 
+}
+header{
+
+    display: flex;
+    justify-content: flex-end;   
+    text-align: center;
+    font-size: large;
+}
+header>div{
+padding-right: 11px;
+}
+header>a{
+    padding-left: 12px; 
+} 
+.text-decor{
+    text-decoration: none ;
+    color: white;
+    padding-left:12px;
+  
+}
+.background{
+  background-color: black;
+  display: flex;
+ 
+}
+nav{
+  display: flex;
+border-bottom:2px solid gray;
+width: 100%;
+}
+#logodiv{
+  width: 30%;
+  display: flex;
+  text-align: start;
+  align-items: center;
+
+}
+#logodiv>div{
+  display: flex;
+  width:50% ;
+}
+#logo{  
+width: 50%;
+}
+#SearchBar{
+width: 65%;
+display: flex;
+align-items: center;
+}
+#SearchBar>div{
+width: 100%;
+margin: auto;
+}
+#SearchBar input{
+width: 100%;
+border-radius: 3px;
+border: 2px solid gray;
+padding: 10px 20px 10px 20px;
+font-size: 20px;
+}
+
+
+/*women and  men*/
+#wm{
+ margin-right:100px;
+ 
+}
+#wm a{
+  padding-right: 30px ;  
+}
