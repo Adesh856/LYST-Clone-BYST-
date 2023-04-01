@@ -1,0 +1,420 @@
+  /* html{
+        scrollbar-width: normal;
+        scrollbar-color: black;
+      } */
+  
+      body {
+        background-color: white;
+        font-family: Suisse Intl,Helvetica Neue,Helvetica,Arial,sans-serif;
+    }
+    
+    /* html::-webkit-scrollbar {
+        width: 10px;
+        background-color: white;
+    }
+    
+    html::-webkit-scrollbar-thumb {
+        border-radius: 25px;
+        background-color: black;
+        background: linear-gradient(black, grey);
+    } */
+    
+    hr {
+        width: 80%;
+        margin-top: 20px;
+    }
+    hr+h1{
+      text-align: center;
+    }
+    
+    /* h1 {
+        width: 3.5%;
+        border: 2px solid red;
+        margin: auto;
+        font-size: 13px;
+        font-family: "poppins";
+        letter-spacing: 5px;
+        text-align: center;
+     }  */
+    
+    h1+h1 {
+        /* width: 5%; */
+        text-align: center;
+        margin: auto;
+        /* font-family: "poppins"; */
+        font-size: 17px;
+    }
+    
+    #upper {
+        /* border: 2px solid red; */
+        width: 60%;
+        /* height: 40px;  */
+        /* margin-left:400px ; */
+        /* position: relative; */
+       
+        /* display: flex;
+        justify-content: space-between; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        /* margin: auto; */
+        margin-left: 450px;
+    }
+    
+    #upper>div {
+        /* border: 2px solid green; */
+        height: 100%;
+        /* width: 30%; */
+    }
+    
+    #upper>div>p {
+       
+        font-size: 24px;
+    }
+    
+    
+    #upper>div>select {
+        /* border: 2px solid rebeccapurple; */
+        border: 2px solid black;
+        font-weight: bold;
+        /* width: 120px; */
+        padding: 0;
+        margin: 0;
+        margin: auto;
+        /* justify-content: flex-end;
+              align-items: flex-end; */
+        padding: 4px 2px;
+        font-size: 12px;
+        overflow: hidden;
+        /* font-family: poppins; */
+    }
+    
+    #upper>div>select>option {
+        margin: 20px;
+    }
+    
+    #upper>div:nth-child(3) {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+    
+  
+    
+  
+    
+    #body {
+        /* border: 2px solid red; */
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        /* height: 400px; */
+    }
+    
+    #body>div:nth-child(1) {
+        /* border: 2px solid black; */
+        width: 17%
+    }
+    
+    #body>div:nth-child(2) {
+        /* border: 2px solid black; */
+        width: 80%
+    }
+    
+    
+    
+    .bold {
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    
+    #right_Section {
+        display: grid;
+        /* border: 2px solid red; */
+        /* width: 10%; */
+        grid-template-columns: repeat(4, 1fr);
+       
+    }
+    
+    #right_Section>div {
+        /* width: 100%; */
+        /* border: 2px solid blue; */
+        height: auto;
+        padding: 10px;
+        border: 1px solid black;
+        text-align: left;
+    }
+    
+    #right_Section>div>img {
+        /* border: 2px solid black; */
+        width: 100%;
+        margin-bottom: 20px;
+        /* height: 50%; */
+    }
+    
+    #right_Section>div>p {
+        width: 100%;
+        /* border: 2px solid rebeccapurple; */
+        margin: auto;
+        /* font-family: "poppins"; */
+        font-weight: bold;
+        padding-left: 10px;
+        /* text-align: center; */
+    }
+    
+    #right_Section>div>p+p {
+        width: 100%;
+        margin-top: 5px;
+        /* font-family: "poppins"; */
+        font-size: 14px;
+        padding-left: 10px;
+    }
+    
+    #right_Section>div>h4 {
+        /* width: 15%; */
+        /* border: 2px solid red; */
+        margin: auto;
+        font-size: 17px;
+        color: red;
+        margin-top: 5px;
+        padding-left: 10px;
+    }
+    
+    #right_Section>div>button {
+        /* border: 2px solid red; */
+        display: block;
+        margin: auto;
+        margin-top: 5px;
+        border: none;
+        padding: 10px;
+        background-color: white;
+    }
+    
+    #right_Section>div>button:hover {
+        border: 1px solid;
+        cursor: pointer;
+        transition: all .5s ease;
+    }
+    /* #body>div:nth-child(2){
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(3,1fr);
+  }
+  #body>div:nth-child(2)>div{
+      
+  } */
+    
+    .bolder:hover {
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    input [type="checkbox"] {
+        accent-color: red;
+    }
+    
+    .dot {
+        height: 13px;
+        width: 13px;
+        background-color: red;
+        border-radius: 50%;
+        display: inline-block;
+        margin-top: 5px;
+    }
+    
+    #up {
+        width: 80%;
+        display: grid;
+        margin: auto;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    #up>div>p {
+        /* font-family: poppins; */
+        font-size: 14px;
+    }
+    
+    #up>div>img {
+        width: 100%
+    }
+    
+    @media all and (min-width:480px) and (max-width:720px) {
+        #body {
+            display: flex;
+            flex-direction: column;
+            /* border: 2px solid rebeccapurple; */
+        }
+        #left_section>div {
+            width: 100%;
+            /* flex-direction: column; */
+        }
+        /* #body>div{
+            max-height: 600px;
+                overflow: -moz-hidden-unscrollable;
+        } */
+        #body>div:nth-child(1) {
+            width: 100%;
+            /* border: 2px solid green; */
+            /* max-height: 900px; */
+            /* overflow: scroll; */
+        }
+        #left_section>div:nth-child(2) {
+            width: 100%;
+            /* border: 2px solid green; */
+            /* overflow: scroll; */
+        }
+        #body>div:nth-child(2) {
+            width: 100%
+        }
+        #right_Section {
+            display: grid;
+            /* border: 2px solid red; */
+            width: 100%;
+            margin: auto;
+            grid-template-columns: repeat(2, 1fr);
+            /* gap:20px; */
+        }
+        #upper {
+            margin-bottom: 20px;
+        }
+        #up {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    
+    #left_section>div:first-child p {
+        margin-top: 15px;
+    }
+    
+    #left_section label {
+        margin-top: 10px;
+    }
+    
+    #left_section input {
+        margin-right: 10px;
+    }
+  
+    #left_section>div:first-child{
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+    }
+    #gender label{
+      display: block;
+    }
+  
+    #left_section ul{
+      list-style: none;
+     
+    }
+  
+    #left_section ul li{
+      margin-bottom: 10px;
+      margin-left: -20px;
+    }
+    #left_section{
+      height: 400px;
+    }
+  /* 
+    #price>ul{
+      display:  flex;
+      justify-content: space-between;
+      gap :20px ;
+      margin-top: -20px;
+      
+    }
+  #price input{
+      width: 70px;
+      height: 30px;
+  } */
+  
+  span{
+      width :10px;
+      height: 20px;
+      margin-right: 20px;
+     
+  }
+  #left_section{
+      height: 400px !important;
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+      /* border: 1px solid black; */
+  }
+  body{
+      height: 400px;
+  }
+  /* 
+  #left_section h3::after{
+      content: ">";
+      padding-left: 39px;
+  } */
+  #left_section hr{
+      margin-left: -30px;
+      width : 100% ;
+  }
+  
+  
+  #sponcerd{
+      display: flex;
+     width: 80%; 
+      align-items: center;
+      margin-left: 26%;
+  
+  
+  }
+  #sponcerd>div{
+      width:20% ;
+      border: 1px solid black;
+  
+  }
+  #sponcerd p{
+      width: 170px ;
+      margin: auto;
+      margin-bottom: 10px;
+      text-align: center;
+  }
+  #sponcerd img{
+      width : 80% ;
+      height: 200px;
+      display: block;
+      margin: auto;
+      margin-bottom: 20px;
+  }
+  
+  #textlast {
+      width : 65% ;
+      margin-left: 26%;
+      margin-top: 100px;
+  }
+  
+  #sppr{
+      padding-left: 50%;
+  }
+  
+  #topsection {
+      display : flex ;
+      width : 80% ;
+      margin : auto
+  }
+  #topsection>div{
+      width : 48% ;
+  }
+  
+  #topsection>div:first-child{
+     padding-left: 20%;
+      padding-top: 10%;
+  }
+  
+  #topsection h1{
+      font-size: 50px;
+      font-weight: 300;
+  }
+  #topsection>div>div{
+      display: flex ;
+      justify-content: space-between;
+      width: 270px;
+  }
+  
