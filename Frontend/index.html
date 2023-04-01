@@ -8,203 +8,8 @@
     <title>Landing Page</title>
     <link rel="stylesheet" href="./css/header&nav.css">
     <link rel="stylesheet" href="./css/silder.css">
-    <style>
-        * {
-            text-decoration: none;
-            color: bl;
-        }
-
-        section {
-            width: 100%;
-        }
-
-        section img {
-            width: 100%;
-        }
-
-        .Spacediv {
-            border: 2px solid transparent;
-            height: 50px;
-        }
-
-        .ProductDiv {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            width: 99%;
-            margin: auto;
-            border-bottom: 2px solid black;
-            text-transform: uppercase;
-            margin-left: 5px;
-        }
-
-        .ProductDiv img {
-            height: 300px;
-            object-fit: cover;
-            width: 300px;
-        }
-
-        .ProductDiv>div>a {
-            display: flex;
-            width: 100%;
-            border: 2px solid gray;
-            justify-content: space-between;
-        }
-
-        .ProductDiv>div div {
-
-            writing-mode: vertical-lr;
-            /* set the writing mode to vertical */
-            transform: rotate(-180deg);
-            /* rotate the text 180 degrees */
-            text-align: right;
-            /* align the text to the right */
-            /* center the text vertically */
-        }
-
-
-        .border {
-            color: red;
-            font-size: 50px;
-
-        }
-
-        .container-Signup {
-            display: flex;
-            width: 100%;
-            border-top: 2px solid grey;
-            background-color: rgb(202,252,79);
-        }
-        .nonsignup_side {
-            width: 65%;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            padding: 50px 50px;
-            gap: 20px 20px;
-            background-color: #F5F4F2;
-        }
-        .nonsignup_side>div{
-            text-align: start;
-        }
-
-        .largefontsize {
-            font-size: 100px;
-        }
-
-        .normalfontsize {
-            font-size: 35px;
-            font-weight: 00;
-        }
-
-        .nonsignup_side h3 {
-            font-weight: normal;
-        }
-
-        .signup_side{
-            font-size: 35px;
-            margin: auto;
-           cursor: pointer;
-            margin-top: 100px;
-            margin-bottom: 100px;
-
-         
-        }
-
-        .signup_side button {
-            font-size: 15px;
-            text-align: center;
-            padding: 5px 20px 5px 20px;
-            background-color: black;
-            color:white;
-            border: none;
-            cursor: pointer;
-        }
-        .mostwanted{
-            display: flex;
-            width: 91.7%;
-            justify-content: space-evenly;
-            align-items: end;
-            
-            padding: 60px;
-        }
-        #mowa{
-            width: 20%;
-            display: flex;
-         
-            transform: rotate(-90deg);
-            justify-content: center;
-            align-items: start  ;
-            margin-bottom: 90px;
-            font-size:  30px;
-        }
-        .contentmostwanted{
-            width: 70%;
-            display: grid;
-            font-weight: bold;font-size: x-large;
-            grid-template-columns: repeat(5,1fr);
-            gap: 10px 20px;
-         
-        }
-        .newspace{
-            border-bottom: 2px solid grey;
-       
-        }
-        .newspace{
-            border-top: 2px solid grey;
-        }
-        /*footer*/
-        footer {
-            background-color: black;
-            color: white;
-            padding: 40px;
-          }
-          
-          .footer-container {
-            display: flex;
-            justify-content: space-between;
-          }
-          
-          .footer-menu {
-            flex-basis: 23%;
-          }
-          
-          footer h3 {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 20px;
-          }
-          
-          footer ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-          }
-          
-          footer li {
-            margin-bottom: 10px;
-          }
-          
-          footer a {
-            color:white;
-            text-decoration: none;
-          }
-          
-          footer a:hover {
-            text-decoration: underline;
-          }
-          
-          .app-icon {
-            display: flex;
-            align-items: center;
-          }
-          
-          .app-icon img {
-            width: 70px;
-            height: 70px;
-            margin-right: 10px;
-          }
-          
-    </style>
-
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/footer.css">
 </head>
 
 <body>
@@ -220,9 +25,9 @@
             </ul>
         </div>
         <div class="background">
-            <a class="text-decor" href="">SignUp</a>
+            <a class="text-decor" href="./html/Register.html">SignUp</a>
             <a class="text-decor" href="">OR</a>
-            <a class="text-decor" href="">SignIn</a>
+            <a class="text-decor" href="./html/SignIn.html">SignIn</a>
         </div>
     </header>
 
@@ -230,7 +35,7 @@
     <nav>
         <div id="logodiv">
             <div>
-                <a href=""><img id="logo" src="./images/logo.png" alt=""></a>
+                <a href="./index.html"><img id="logo" src="./images/logo.png" alt=""></a>
             </div>
             <div id="wm"><a href="">
                     <h1>Women</h1>
@@ -255,7 +60,7 @@
         <div class="Spacediv">
         </div>
         <div class="ProductDiv">
-            <div> <a href="">
+            <div> <a href="./html/products.html">
                     <div>
                         <h1>DENIM ON DENIM</h1>
                     </div>
@@ -264,7 +69,7 @@
             </div>
 
             <div>
-                <a href="">
+                <a href="./html/products.html">
                     <div>
                         <h1>ELEVATED BASIC</h1>
                     </div>
@@ -272,7 +77,7 @@
                 </a>
             </div>
             <div>
-                <a href="">
+                <a href="./html/products.html">
                     <div>
                         <h1>BIG BAG ENERGY</h1>
                     </div>
@@ -280,7 +85,7 @@
                 </a>
             </div>
             <div>
-                <a href="">
+                <a href="./html/products.html">
                     <div>
                         <h1>Balenciaga</h1>
                     </div>
@@ -289,7 +94,7 @@
                 </a>
             </div>
             <div>
-                <a href="">
+                <a href="./html/products.html">
                     <div>
                         <h1>FENDI</h1>
                     </div>
@@ -298,7 +103,7 @@
                 </a>
             </div>
             <div>
-                <a href="">
+                <a href="./html/products.html">
                     <div>
                         <h1>LYST_CA_DREAMING</h1>
                     </div>
@@ -306,7 +111,7 @@
                 </a>
             </div>
             <div>
-                <a href="">
+                <a href="./html/products.html">
                     <div>
                         <h1>MONCLER</h1>
                     </div>
@@ -314,7 +119,7 @@
                 </a>
             </div>
             <div>
-                <a href="">
+                <a href="./html/products.html">
                     <div>
                         <h1>MODA</h1>
                     </div>
@@ -327,6 +132,7 @@
         </div>
         <div class="Spacediv">
         </div>
+        <!-- silder -->
         <div class="slider-container">
             <div class="slider">    
               <div class="slider-item">

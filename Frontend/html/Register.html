@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/header&nav.css">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-size: 15px;
+            color: black;
+            font-family: sans-serif;
+        }
+
+        .container {
+            display: flex;
+            width: 96%;
+            margin: 20px 20px 20px 20px;
+        }
+
+        .container>div {
+            margin: auto;
+            width: 40%;
+           
+        }
+
+        .rightdiv img {
+            height: 600px;
+            object-fit: cover;
+            width: 600px;
+        }
+
+        .leftdiv{
+            width: 40%;
+        }
+        
+
+        .leftdiv input {
+            width: 100%;
+            padding: 20px 0px 20px 0px;
+          
+            border: none;
+            border-bottom: 2px solid rgba(34, 33, 33, 0.31);
+            outline: none;
+            font-size: 15px;
+            cursor: text;
+            font-family: sans-serif;
+        }
+
+        .leftdiv>div {
+            padding: 40px 40px 40px 40px;
+        
+        }
+
+        .leftdiv div {
+            padding: 10px 10px 10px 10px;
+       
+        }
+
+        .Signup {
+            width: 100%;
+        }
+
+        .or {
+            text-align: center;
+            padding: 0px
+        }
+
+        input[type=submit],
+        .Signup {
+            border: transparent;
+            background-color: rgb(33, 32, 32);
+            border-radius: 3px;
+            color: white;
+            padding: 20px 0px 20px 0px;
+            cursor: pointer;
+            font-size: 15px;
+            
+        }
+        .leftdiv h1{
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="dropdown">
+            <button onclick="toggleDropdown()">Help▾</button>
+            <ul>
+                <li><a href="#">Help center</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Careers</a></li>
+            </ul>
+        </div>
+        <div class="background">
+            <a class="text-decor" href="">SignUp</a>
+            <a class="text-decor" href="">OR</a>
+            <a class="text-decor" href="">SignIn</a>
+        </div>
+    </header>
+
+    <!-- nav-bar -->
+    <nav>
+        <div id="logodiv">
+            <div>
+                <a href="../index.html"><img id="logo" src="../images/logo.png" alt=""></a>
+            </div>
+            <div id="wm"><a href="">
+                    <h1>Women</h1>
+                </a>
+                <a href="">
+                    <h1>Men</h1>
+                </a>
+            </div>
+        </div>
+        <div id="SearchBar">
+            <div>
+                <input type="Serach" placeholder="Search...">
+            </div>
+        </div>
+    </nav>
+
+
+    <section>
+        <div class="container">
+            <div class="leftdiv">
+                <div>
+                    <h1>
+  Feel the Fashion
+                        <br>
+                        The only fashion site you need.
+                    
+                    </h1>
+                   
+                </div>
+
+                <form action="">
+                    <div >
+                        <input type="text" name="" id="name" placeholder="Enter your name to register">
+                    </div>
+                    <div >
+                        <input type="email" name="" id="email" placeholder="Enter your email address to register">
+                    </div>
+                    <div>
+                        <input type="password" name="" id="password" placeholder="Enter your password to register">
+                    </div>
+                    <input type="submit" value="Register">
+                </form>
+
+                <div class="or color">
+                    <h1>
+                        <hr>
+                        OR
+                        <hr>
+                       
+                    </h1>
+                </div>
+                <div class="Signup_button color">
+                    <a href="./SignIn.html"><button class="Signup">Signin</button></a>
+                </div>
+            </div>
+            <div class="rightdiv">
+                <div>
+                    <img src="../images/bg.png"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-menu">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Women's Clothing</a></li>
+                    <li><a href="#">Men's Clothing</a></li>
+                    <li><a href="#">Accessories</a></li>
+                </ul>
+            </div>
+            <div class="footer-menu">
+                <h3>Customer Service</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                </ul>
+            </div>
+            <div class="footer-menu">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="stores">
+                <a href=""> <img src="./images/trustpilot.png" alt=""></a>
+                <a href=""><img src="./images/stores.png" alt=""></a>
+            </div>
+            <div class="app-icon">
+                <a href="#">
+                    <img style="background-color:white" src="../images//logo.png" alt="App icon">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="../js/header&nav.js"></script>
+
+</html>

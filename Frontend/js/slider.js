@@ -1,5 +1,5 @@
 
-    const slider = document.querySelector('.slider');
+const slider = document.querySelector('.slider');
 const dotsContainer = document.querySelector('.slider-dots');
 let currentIndex = 0;
 
