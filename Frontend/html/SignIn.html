@@ -126,8 +126,20 @@
         </div>
         <div id="SearchBar">
             <div>
-                <input type="Serach" placeholder="Search...">
+                <form action="">
+                <input type="search" id="search" placeholder="Search...">
+            </form>
             </div>
+        </div>
+        <div id="Cart">
+            <h4 id="h4username"></h4>
+            <a href="">
+         <img src="../images/profile-user.png" alt="">
+            </a>
+           
+            <a href="./cart.html">
+                <img src="../images/grocery-store.png" alt="">
+            </a>
         </div>
     </nav>
 
@@ -145,7 +157,7 @@
                    
                 </div>
 
-                <form action="">
+                <form id="form"action="">
                     <div class="color">
                         <input type="email" name="" id="email" placeholder="Enter your email address to login">
                     </div>
@@ -222,15 +234,15 @@
     </footer>
 </body>
 <script src="../js/header&nav.js"></script>
+<script src="../js/username.js"></script>
 <script>
     const email=document.getElementById("email")
     const password=document.getElementById("password")
-    const form=document.querySelector("form")
-
-
+    const form=document.getElementById("form")
+   
     form.addEventListener("submit",(e)=>{
         e.preventDefault()
-        fetch("http://localhost:8732/users/login",{
+        fetch("https://clever-crow-belt.cyclic.app/users/login",{
             method:"POST",
             headers:{
                 "Content-type":"application/json",

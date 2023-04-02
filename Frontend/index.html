@@ -25,9 +25,9 @@
             </ul>
         </div>
         <div class="background">
-            <a class="text-decor" href="./html/Register.html">SignUp</a>
+            <a class="text-decor" href="../html/Register.html">SignUp</a>
             <a class="text-decor" href="">OR</a>
-            <a class="text-decor" href="./html/SignIn.html">SignIn</a>
+            <a class="text-decor" href="../html/SignIn.html">SignIn</a>
         </div>
     </header>
 
@@ -35,7 +35,7 @@
     <nav>
         <div id="logodiv">
             <div>
-                <a href="./index.html"><img id="logo" src="./images/logo.png" alt=""></a>
+                <a href="../index.html"><img id="logo" src="../images/logo.png" alt=""></a>
             </div>
             <div id="wm"><a href="">
                     <h1>Women</h1>
@@ -47,8 +47,20 @@
         </div>
         <div id="SearchBar">
             <div>
-                <input type="Serach" placeholder="Search...">
+                <form action="">
+                <input type="search" id="search" placeholder="Search...">
+            </form>
             </div>
+        </div>
+        <div id="Cart">
+            <h4 id="h4username"></h4>
+            <a href="">
+         <img src="../images/profile-user.png" alt="">
+            </a>
+           
+            <a href="../html/cart.html">
+                <img src="../images/grocery-store.png" alt="">
+            </a>
         </div>
     </nav>
 
@@ -200,10 +212,10 @@
                 </div>
             </div>
             <div class="signup_side">
-                <div>
+                <a href="./html/Register.html"><div>
                     <h1>SIGN UP <br>FOR <br>SMARTER <br> SHOPPING</h1>
                     <button>Join ⮕</button>
-                </div>
+                </div></a>
             </div>
         </div>
         <div class="Spacediv newspace">
@@ -271,9 +283,8 @@
       </footer>
       
 </body>
-<script src="./js/header&nav.js">
-</script>
-<script src="./js/slider.js"></script>
+<script  src="./js/header&nav.js"></script>
+<script  src="./js/username.js"></script>
 
 </html>
 

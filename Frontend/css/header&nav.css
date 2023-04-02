@@ -84,10 +84,11 @@ width: 100%;
 width: 50%;
 }
 #SearchBar{
-width: 65%;
+width: 40%;
 display: flex;
 align-items: center;
 }
+
 #SearchBar>div{
 width: 100%;
 margin: auto;
@@ -99,8 +100,19 @@ border: 2px solid gray;
 padding: 10px 20px 10px 20px;
 font-size: 20px;
 }
-
-
+#Cart{
+  width:40% ;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 10px;
+}
+#Cart a,h4{
+  margin-right:10px ;
+}
+#Cart img{
+  width: 50%;
+}
 /*women and  men*/
 #wm{
  margin-right:100px;
