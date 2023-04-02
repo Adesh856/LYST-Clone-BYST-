@@ -9,7 +9,96 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/header&nav.css">
     <link rel="stylesheet" href="../css/products.css">
+     <link rel="stylesheet" href="../css/nav.css">
+     <style>
+        #container{
+         
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            width: 99%;
+            text-align:start;
+           margin: auto;
+           gap: 5px;
+           
+          
+        }
+        #container div{
+      
+            padding: 10px;
+        }
+        #container>div{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+        }
+        #image{
+          
+            display: flex;
+            justify-content: center;
+        }
+        #image img{
+            margin: 0px;
+        }
+        
+        #container img{
+            object-fit: cover;
+            width: 65%;
+        }
+        #buttonsdiv{
+          
+            text-align: center;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        #buttonsdiv button{
+          padding:10px 40px 10px 50px;
+          color: white;
+          background-color: black;
+        }
+       
+        #container button{
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            margin-right: 20px;
+            color: white;
+            background-color: black;
+          cursor: pointer;
+        }
+        
+        .stPrice{
+            display: flex;
+        
+       
+        }
+        .strike {
+            text-decoration: line-through;
+            color: rgba(0, 0, 0, 0.469);
+            font-weight: bold;
 
+            padding-right:15px ;
+          }
+          .percent{
+            padding: 10px;
+          }
+          #filter{
+            background-color: black;
+            color: white;
+            width:10%;
+            margin-bottom: 30px;
+            margin-left: 10px;
+           font-size: 20px;
+           border: none;
+           border-radius: 4px;
+          }
+          #Filterdiv option,h3{
+            font-size: 20px;
+            border: none;
+            margin-left: 10px;
+          }
+          #Filterdiv option{
+            background-color: black;
+            color: white;
+          }
+     </style>
 </head>
 
 <body>
@@ -29,7 +118,7 @@
             <a class="text-decor" href="./SignIn.html">SignIn</a>
         </div>
     </header>
-
+   
     <!-- nav-bar -->
     <nav>
         <div id="logodiv">
@@ -46,8 +135,20 @@
         </div>
         <div id="SearchBar">
             <div>
-                <input type="Serach" placeholder="Search...">
+                <form action="">
+                <input type="search" id="search" placeholder="Search...">
+            </form>
             </div>
+        </div>
+        <div id="Cart">
+            <h4 id="h4username"></h4>
+            <a href="">
+         <img src="../images/profile-user.png" alt="">
+            </a>
+           
+            <a href="./cart.html">
+                <img src="../images/grocery-store.png" alt="">
+            </a>
         </div>
     </nav>
 
@@ -55,6 +156,7 @@
 
     <section>
         <div id="Filterdiv">
+            <h3>Filter by price</h3>
          <select name="" id="filter">
             <option value="">No filter</option>
             <option value="asc">Low to high</option>
@@ -115,25 +217,30 @@
         </div>
     </footer>
 </body>
+<script  src="../js/header&nav.js"></script>
+<script  src="../js/username.js"></script>
 <script>
     const container = document.getElementById("container")
     const buttondiv = document.getElementById("buttonsdiv")
-    const token = localStorage.getItem("token")
+///Search
+
 
 const newfuncforfilter=(order)=>{
 let pages;
+let fetchdata;
 function forpage(pnum){
     let api;
    if(order!=null){
-    api=`http://localhost:8732/products?page=${pnum}&limit=10&sort=${order}`
+    api=`https://clever-crow-belt.cyclic.app/products?page=${pnum}&limit=12&sort=${order}`
    }else{
-    api=`http://localhost:8732/products?page=${pnum}&limit=10`
+    api=`https://clever-crow-belt.cyclic.app/products?page=${pnum}&limit=12`
    }
     fetch(`${api}`, {
     }).then((res) => res.json()).then((data) => {
         
-        pages=Math.ceil(data.counts/10) 
+        pages=Math.ceil(data.counts/12) 
         paginationfunc(pages)
+        fetchdata=data.data
         productsappending(data.data)
         
     }).catch((err) => {
@@ -145,28 +252,102 @@ function forpage(pnum){
 
 forpage(pnum=1)
     /*products appending*/
+   
+
+
+
     function productsappending(data) {
-        container.innerHTML = ""
-        let str = ""
-        data.forEach((ele) => {
-            str += `<div class="card">
-        <img src=${ele.img} alt="">
-        <h3>${ele.title}</h3>
-        <h4>${ele.desc}</h4>
-        <h4>${ele.category}</h4>
-        <div class ="stPrice"><p> ₹${Number(ele.strikedOffPrice)}</p> <h3> ₹${Number(ele.price)}</h3> <p> ${Math.floor(((Number(ele.strikedOffPrice)-Number(ele.price))/Number(ele.strikedOffPrice))*100)}% OFF</p></div>
-        <div class="Add_to_cart"><button>Add to Cart</button></div>
-     </div>`
-        })
-container.innerHTML=str
+        container.innerHTML = "";
+        for (let i = 0; i < data.length; i++) {
+            let ele = data[i];
+            let discountPercent = Math.floor(((Number(ele.strikedOffPrice) - Number(ele.price)) / Number(ele.strikedOffPrice)) * 100);
+            let cardDiv = document.createElement("div");
+            cardDiv.classList.add("card");
+            let imageDiv = document.createElement("div");
+            imageDiv.setAttribute("id", "image");
+            let img = document.createElement("img");
+            img.setAttribute("src", ele.img);
+            img.setAttribute("alt", "");
+            let tagsDiv = document.createElement("div");
+            tagsDiv.setAttribute("id", "tags");
+            let titleH3 = document.createElement("h3");
+            titleH3.textContent = ele.title;
+            let descH4 = document.createElement("h4");
+            descH4.textContent = ele.desc;
+            let categoryH4 = document.createElement("h4");
+            categoryH4.textContent = ele.category;
+            let percentP = document.createElement("p");
+            percentP.classList.add("percent");
+            percentP.textContent = discountPercent + "% OFF";
+            let stPriceDiv = document.createElement("div");
+            stPriceDiv.classList.add("stPrice");
+            let strikeP = document.createElement("p");
+            strikeP.classList.add("strike");
+            strikeP.textContent = "₹" + Number(ele.strikedOffPrice);
+            let priceH3 = document.createElement("h3");
+            priceH3.textContent = "₹" + Number(ele.price);
+            let button = document.createElement("button");
+            button.textContent = "Add to Cart";
+            button.addEventListener("click",(e)=>{
+                functionforaddTocart(ele)
+            })
+
+            cardDiv.appendChild(imageDiv);
+            imageDiv.appendChild(img);
+            cardDiv.appendChild(tagsDiv);
+            tagsDiv.appendChild(titleH3);
+            tagsDiv.appendChild(descH4);
+            tagsDiv.appendChild(categoryH4);
+            cardDiv.appendChild(percentP);
+            cardDiv.appendChild(stPriceDiv);
+            stPriceDiv.appendChild(strikeP);
+            stPriceDiv.appendChild(priceH3);
+            cardDiv.appendChild(button);
+            container.appendChild(cardDiv);
+        }
     }
+    function functionforaddTocart(e){
+        let obj=
+        fetch(`https://clever-crow-belt.cyclic.app/cart/add`,{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json",
+            "Authorization":`${token}`
+        },
+        body:JSON.stringify({
+            img:e.img,
+            title:e.title,
+            desc:e.desc,
+            price:e.price,
+            category:e.category,
+            strikedOffPrice:e.strikedOffPrice
+        })
+        }).then((res)=>res.json()).then((data)=>{
+            console.log(data)
+        }).catch((err)=>console.log(err))
+    }
+   
 
-
+    let formdata=document.querySelector("form")
+    formdata.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        let Formby=formdata.search.value;
+        console.log(Formby)
+        console.log(fetchdata)
+        let Searched=fetchdata.filter((ele)=>{
+            if((ele.title.toUpperCase().includes(Formby.toUpperCase())==true)||(ele.price.includes(Formby)==true)||(ele.category.toUpperCase().includes(Formby.toUpperCase())==true)){
+                return true
+            }else {
+                return false 
+            }
+        })
+        productsappending(Searched)
+    })
   
   function paginationfunc(page){
     let btn_arr=[]
     for(let i=1;i<=page;i++){
-        btn_arr.push(`<button class="paggination-button"    data-page-number=${i}>${i}</button>`)
+        btn_arr.push(`<button class="paggination-button" data-page-number=${i}>${i}</button>`)
     }
     buttondiv.innerHTML=btn_arr.join("")
     let all_button=document.querySelectorAll("#buttonsdiv button")
@@ -177,6 +358,7 @@ container.innerHTML=str
         })
     }
   }
+ 
 }
 newfuncforfilter(order=null)
 const filter=document.getElementById("filter")
@@ -189,7 +371,29 @@ const filter=document.getElementById("filter")
         newfuncforfilter("desc")
     }
 })
-
+ 
 </script>
 
 </html>
+
+ <!-- function productsappending(data){
+        data.forEach((ele)=>{
+            let card=document.createElement("div")
+        card.setAttribute("class","card")
+        let imgdiv=document.createElement("div")
+        imgdiv.setAttribute("id","image")
+        let img=document.createElement("img")
+        img.innerText=ele.img;
+        imgdiv.append(img)
+        let tagsdiv=document.createElement("div")
+        tagsdiv.setAttribute("id","tags")
+        let h3=document.createElement("h3")
+        h3.innerText=ele.title
+        let h41=document.createElement("h4")
+        h4.innerText=ele.desc
+        let h42=document.createElement("h4")
+        h3.innerText=ele.category;
+        tagsdiv.append(h3,h41,h42)
+        let p=document.createElement("")
+        })
+    } -->

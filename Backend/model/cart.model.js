@@ -6,7 +6,9 @@ const CartSchema=mongoose.Schema({
     desc:String,
     price:String,
     category:String,
-    strikedOffPrice:String
+    strikedOffPrice:String,
+    userid:String,
+    quantity:Number,
 },{
     versionKey:false
 })
