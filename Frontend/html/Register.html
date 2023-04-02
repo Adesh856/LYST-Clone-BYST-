@@ -8,6 +8,7 @@
     <title>SignIn</title>
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/header&nav.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,9 +103,9 @@
             </ul>
         </div>
         <div class="background">
-            <a class="text-decor" href="">SignUp</a>
+            <a class="text-decor" href="./Register.html">SignUp</a>
             <a class="text-decor" href="">OR</a>
-            <a class="text-decor" href="">SignIn</a>
+            <a class="text-decor" href="./SignIn.html">SignIn</a>
         </div>
     </header>
 
@@ -211,8 +212,8 @@
                 </ul>
             </div>
             <div class="stores">
-                <a href=""> <img src="./images/trustpilot.png" alt=""></a>
-                <a href=""><img src="./images/stores.png" alt=""></a>
+                <a href=""> <img src="../images/trustpilot.png" alt=""></a>
+                <a href=""><img src="../images/stores.png" alt=""></a>
             </div>
             <div class="app-icon">
                 <a href="#">
@@ -223,5 +224,30 @@
     </footer>
 </body>
 <script src="../js/header&nav.js"></script>
+<script>
+    const email=document.getElementById("email")
+    const password=document.getElementById("password")
+    const nam=document.getElementById("name")
+    const form=document.querySelector("form")
 
+
+    form.addEventListener("submit",(e)=>{
+        e.preventDefault()
+        fetch("http://localhost:8732/users/register",{
+            method:"POST",
+            headers:{
+                "Content-type":"application/json",
+            },
+            body:JSON.stringify({
+                name:nam.value,
+                email:email.value,
+                password:password.value
+            })
+        }).then((res)=>res.json()).then((data)=>{
+            console.log(data)
+            Swal.fire(`${data.msg}`)
+        }).catch((err)=>console.log(err))
+    })
+
+</script>
 </html>
