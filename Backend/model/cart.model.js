@@ -1,6 +1,6 @@
 const mongoose=require("mongoose")
 
-const productSchema=mongoose.Schema({
+const CartSchema=mongoose.Schema({
     img:String,
     title:String,
     desc:String,
@@ -11,6 +11,6 @@ const productSchema=mongoose.Schema({
     versionKey:false
 })
 
-const productModel=mongoose.model("products",productSchema)
+const CartModel=mongoose.model("Cart",CartSchema)
 
-module.exports={productModel}
+module.exports={CartModel}
