@@ -30,7 +30,7 @@ productRouter.get("/",async(req,res)=>{
     }
 })
 productRouter.get("/search/:name",async(req,res)=>{
-    let {page,limit,sort}=req.query
+    let {page,limit}=req.query
     let {name}=req.params
     console.log(name)
     page=+page;
@@ -40,8 +40,7 @@ productRouter.get("/search/:name",async(req,res)=>{
        const Limit=limit||10
        const skip=(Page-1)*limit
        const productlength=await productModel.find()
-       const regex = new RegExp(name, "i")
-        products=await productModel.find({name: regex}).skip(skip).limit(Limit)
+        products=await productModel.find({ name: /name/i }).skip(skip).limit(Limit)
         res.status(200).send({data:products,counts:productlength.length})
     } catch (error) {
         res.status(400).send({"msg":error.message})
