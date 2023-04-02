@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,10 @@
     <title>Product_Page</title>
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/header&nav.css">
-   <link rel="stylesheet" href="../css/products.css">
-   
+    <link rel="stylesheet" href="../css/products.css">
+
 </head>
+
 <body>
     <header>
         <div class="dropdown">
@@ -22,9 +24,9 @@
             </ul>
         </div>
         <div class="background">
-            <a class="text-decor" href="">SignUp</a>
+            <a class="text-decor" href="./Register.html">SignUp</a>
             <a class="text-decor" href="">OR</a>
-            <a class="text-decor" href="">SignIn</a>
+            <a class="text-decor" href="./SignIn.html">SignIn</a>
         </div>
     </header>
 
@@ -50,9 +52,24 @@
     </nav>
 
 
-    
-<section>
-</section>
+
+    <section>
+        <div id="Filterdiv">
+         <select name="" id="filter">
+            <option value="">No filter</option>
+            <option value="asc">Low to high</option>
+            <option value="desc">High to low</option>
+         </select>
+        </div>
+        <!-- appending  -->
+        <div id="container">
+
+        </div>
+        <!-- button -->
+        <div id="buttonsdiv">
+
+        </div>
+    </section>
 
 
 
@@ -87,8 +104,8 @@
                 </ul>
             </div>
             <div class="stores">
-                <a href=""> <img src="./images/trustpilot.png" alt=""></a>
-                <a href=""><img src="./images/stores.png" alt=""></a>
+                <a href=""> <img src="../images/trustpilot.png" alt=""></a>
+                <a href=""><img src="../images/stores.png" alt=""></a>
             </div>
             <div class="app-icon">
                 <a href="#">
@@ -98,4 +115,81 @@
         </div>
     </footer>
 </body>
+<script>
+    const container = document.getElementById("container")
+    const buttondiv = document.getElementById("buttonsdiv")
+    const token = localStorage.getItem("token")
+
+const newfuncforfilter=(order)=>{
+let pages;
+function forpage(pnum){
+    let api;
+   if(order!=null){
+    api=`http://localhost:8732/products?page=${pnum}&limit=10&sort=${order}`
+   }else{
+    api=`http://localhost:8732/products?page=${pnum}&limit=10`
+   }
+    fetch(`${api}`, {
+    }).then((res) => res.json()).then((data) => {
+        
+        pages=Math.ceil(data.counts/10) 
+        paginationfunc(pages)
+        productsappending(data.data)
+        
+    }).catch((err) => {
+        console.log(err)
+    })
+ 
+
+}
+
+forpage(pnum=1)
+    /*products appending*/
+    function productsappending(data) {
+        container.innerHTML = ""
+        let str = ""
+        data.forEach((ele) => {
+            str += `<div class="card">
+        <img src=${ele.img} alt="">
+        <h3>${ele.title}</h3>
+        <h4>${ele.desc}</h4>
+        <h4>${ele.category}</h4>
+        <div class ="stPrice"><p> ₹${Number(ele.strikedOffPrice)}</p> <h3> ₹${Number(ele.price)}</h3> <p> ${Math.floor(((Number(ele.strikedOffPrice)-Number(ele.price))/Number(ele.strikedOffPrice))*100)}% OFF</p></div>
+        <div class="Add_to_cart"><button>Add to Cart</button></div>
+     </div>`
+        })
+container.innerHTML=str
+    }
+
+
+  
+  function paginationfunc(page){
+    let btn_arr=[]
+    for(let i=1;i<=page;i++){
+        btn_arr.push(`<button class="paggination-button"    data-page-number=${i}>${i}</button>`)
+    }
+    buttondiv.innerHTML=btn_arr.join("")
+    let all_button=document.querySelectorAll("#buttonsdiv button")
+    for(let btn of all_button){
+        btn.addEventListener("click",(e)=>{
+            e.preventDefault()
+            forpage(Number(e.target.dataset.pageNumber))
+        })
+    }
+  }
+}
+newfuncforfilter(order=null)
+const filter=document.getElementById("filter")
+  filter.addEventListener("change",(e)=>{
+    if(filter.value===""){
+    newfuncforfilter(null) 
+    }else if(filter.value==="asc"){
+        newfuncforfilter("asc")
+    }else if(filter.value==="desc"){
+        newfuncforfilter("desc")
+    }
+})
+
+</script>
+
 </html>

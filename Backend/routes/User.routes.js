@@ -4,6 +4,7 @@ const{UserModel}=require("../model/user.model")
 const bcrypt=require("bcrypt")
 const jwt=require("jsonwebtoken")
 
+
 //Registration routes
 userRouter.post("/register",async(req,res)=>{
     const {name,password,email}=req.body
@@ -12,7 +13,7 @@ userRouter.post("/register",async(req,res)=>{
             // Store hash in your password DB.
             const user=new UserModel({password:hash,name,email})
             await user.save()
-            res.status(200).send({"msg":"User has been added"})
+            res.status(200).send({"msg":"Registration Successful"})
         });
     } catch (error) {
         res.status(400).send({"msg":error.message})

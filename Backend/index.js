@@ -5,12 +5,22 @@ const{connection}=require("./db")
 const{userRouter}=require("./routes/User.routes")
 const{productRouter}=require("./routes/products.routes")
 const{auth}=require("./middleware/auth.middleware")
-app.use(express.json())
 
+const {cartRouter}=require("./routes/cart.routes")
+const cors=require("cors")
+
+//extras
+app.use(express.json())
+app.use(cors())
 //routes
+
+//routes and middelware
 app.use("/users",userRouter)
-app.use(auth)
 app.use("/products",productRouter)
+app.use(auth)
+app.use("/cart",cartRouter)
+
+
 app.listen(8732,async()=>{
   try {
     await connection
