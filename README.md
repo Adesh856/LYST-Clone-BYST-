@@ -36,7 +36,7 @@ git clone https://github.com/your_username/your_repository.git
 
 ## Deployment
 
-The app is deployed and accessible at: [https://your-app-url.com](https://your-app-url.com)
+The app is deployed and accessible at :- [Deployed Link](https://64b902eef63d986dc912c71b--enchanting-fairy-d454f3.netlify.app/)
 
 
 
