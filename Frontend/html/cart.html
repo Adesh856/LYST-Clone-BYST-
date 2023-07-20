@@ -24,12 +24,11 @@
         width: 30%;
         border-color:gray ;
         border-radius:3px ;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
-        margin: auto;
+      margin-left: 30px;
+
     }
     #Cart-totalamount div{
         display: flex;
-       
         justify-content: space-between;
         padding: 30px 10px 30px 10px ;
     }
@@ -63,7 +62,7 @@
             width: 99%;
             text-align:start;
            margin: auto;
-           gap: 5px;
+           gap: 10px;
            
           
         }
@@ -73,6 +72,7 @@
         }
         #cart-conatiner>div{
             box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+         
         }
         #image{
           
@@ -144,6 +144,8 @@
             color: white;
           }
      
+
+
    </style>
 </head>
 <body>
@@ -168,10 +170,10 @@
             <div>
                 <a href="../index.html"><img id="logo" src="../images/logo.png" alt=""></a>
             </div>
-            <div id="wm"><a href="">
+            <div id="wm"><a href="./products.html">
                     <h1>Women</h1>
                 </a>
-                <a href="">
+                <a href="./products.html">
                     <h1>Men</h1>
                 </a>
             </div>
@@ -194,6 +196,7 @@
             </a>
         </div>
     </nav>
+
 
 
     <p id="Cartcount">CART(<span id="countcart">0</span>)</p>
@@ -271,12 +274,16 @@
       </footer>
       
 </body>
+<script src="../js/api.js"></script>
 <script  src="../js/header&nav.js"></script>
-<script  src="../js/username.js"></script>
+<!-- <script  src="../js/username.js"></script> -->
 <script>
+    const token =localStorage.getItem("token")
 
-     
-    fetch("https://clever-crow-belt.cyclic.app/cart",{
+    const name=localStorage.getItem("name")
+    h4username.innerHTML=name
+   const  fetchCart= ()=>{
+    fetch(`${baseurl}/cart`,{
         headers:{
             "Authorization":`${token}`
         }
@@ -286,6 +293,8 @@
     }).catch((err)=>{
         console.log(err)
     })
+}
+    fetchCart()
 const Subtotal=document.getElementById("price")
 const total=document.getElementById("toatlamount")
 const count=document.getElementById("countcart")
@@ -353,12 +362,13 @@ const count=document.getElementById("countcart")
     }
 
     function functiondelete(id){
-        fetch(`https://clever-crow-belt.cyclic.app/cart/delete/${id}`,{
+        fetch(`${baseurl}/${id}`,{
             method:"DELETE",
             headers:{
                 "Authorization":`${token}`
             }
         }).then((res)=>res.json()).then((data)=>{
+            fetchCart()
             console.log(data)
         })
     }
@@ -418,4 +428,4 @@ const count=document.getElementById("countcart")
     count.innerText = data.length
     count2.innerText=data.length
 }
-Display(Car) -->
+Display(Car) -->    

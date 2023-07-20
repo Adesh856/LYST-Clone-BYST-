@@ -37,10 +37,10 @@
             <div>
                 <a href="../index.html"><img id="logo" src="../images/logo.png" alt=""></a>
             </div>
-            <div id="wm"><a href="">
+            <div id="wm"><a href="./html/products.html">
                     <h1>Women</h1>
                 </a>
-                <a href="">
+                <a href="./html/products.html">
                     <h1>Men</h1>
                 </a>
             </div>
@@ -58,7 +58,7 @@
          <img src="../images/profile-user.png" alt="">
             </a>
            
-            <a href="../html/cart.html">
+            <a href="./cart.html">
                 <img src="../images/grocery-store.png" alt="">
             </a>
         </div>
@@ -284,7 +284,14 @@
       
 </body>
 <script  src="./js/header&nav.js"></script>
-<script  src="./js/username.js"></script>
-
+<script>
+    const name=localStorage.getItem("name")
+    h4username.innerHTML=name
+    setTimeout(function(){
+       
+        localStorage.setItem("token","")
+        localStorage.setItem("name","")
+   }, 900000)
+</script>
 </html>
 

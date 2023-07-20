@@ -28,7 +28,7 @@ userRouter.post("/login",async(req,res)=>{
             bcrypt.compare(password, user.password, function(err, result) {
                 // result == false
                 if(result){
-                    res.status(200).send({"msg":"Login Successfully","token":jwt.sign({"userid":user._id},"BYST",{ expiresIn: '1h' })})
+                    res.status(200).send({"msg":"Login Successfully","token":jwt.sign({"userid":user._id},"BYST",{ expiresIn: '1h' }),"name":user.name})
                 }else{
                     res.status(400).send({"msg":"Invalid Credentials"})
                 }
@@ -40,6 +40,10 @@ userRouter.post("/login",async(req,res)=>{
         res.status(400).send({"msg":error.message})
     }
 })
+
+
+
+
 
 
 module.exports={userRouter}

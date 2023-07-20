@@ -36,12 +36,12 @@ cartRouter.post("/add",async(req,res)=>{
     const token=req.headers.authorization
     const payload=req.body
     try {
-        const cartforchecking=await CartModel.find({title:payload.title,userid:payload.userid})
+        const cartforchecking=await CartModel.find({desc:payload.desc,userid:payload.userid})
         if(cartforchecking.length==0){
         jwt.verify(token, 'BYST',async function(err, decoded) {
             console.log(decoded.userid==req.body.userid)
             if(decoded.userid==req.body.userid){
-                if(payload.title!==cartforchecking.title){
+                if(payload.desc!==cartforchecking.desc){
                 const cart=new CartModel({...payload,userid:req.body.userid})
                   await cart.save()
         res.status(200).send({"msg":"Product has been added"})
@@ -51,7 +51,7 @@ cartRouter.post("/add",async(req,res)=>{
             } // bar
           });
         }else{
-            res.status(200).send("Already Added to cart")
+            res.status(200).send({"msg":"Product already added  in the cart"})
         }
     } catch (error) {
         res.status(400).send({"msg":error.message})
@@ -99,5 +99,7 @@ cartRouter.delete("/delete/:id",async(req,res)=>{
         res.status(400).send({"msg":error.message})
     }
 })
+
+
 
 module.exports={cartRouter}

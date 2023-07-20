@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignIn</title>
+    <title>SignUp</title>
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/header&nav.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -115,10 +115,10 @@
             <div>
                 <a href="../index.html"><img id="logo" src="../images/logo.png" alt=""></a>
             </div>
-            <div id="wm"><a href="">
+            <div id="wm"><a href="./products.html">
                     <h1>Women</h1>
                 </a>
-                <a href="">
+                <a href="./products.html">
                     <h1>Men</h1>
                 </a>
             </div>
@@ -141,6 +141,7 @@
             </a>
         </div>
     </nav>
+
 
     <section>
         <div class="container">
@@ -234,18 +235,20 @@
         </div>
     </footer>
 </body>
+<script src="../js/api.js"></script>
+
 <script src="../js/header&nav.js"></script>
-<script src="../js/username.js"></script>
+
 <script>
     const email=document.getElementById("email")
     const password=document.getElementById("password")
     const nam=document.getElementById("name")
     const form=document.getElementById("form")
-    
-
+    const name=localStorage.getItem("name")
+    h4username.innerHTML=name
     form.addEventListener("submit",(e)=>{
         e.preventDefault()
-        fetch("https://clever-crow-belt.cyclic.app/users/register",{
+        fetch(`${baseurl}/users/register`,{
             method:"POST",
             headers:{
                 "Content-type":"application/json",

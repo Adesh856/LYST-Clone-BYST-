@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product_Page</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/header&nav.css">
     <link rel="stylesheet" href="../css/products.css">
@@ -125,10 +127,10 @@
             <div>
                 <a href="../index.html"><img id="logo" src="../images/logo.png" alt=""></a>
             </div>
-            <div id="wm"><a href="">
+            <div id="wm"><a href="./products.html">
                     <h1>Women</h1>
                 </a>
-                <a href="">
+                <a href="./products.html">
                     <h1>Men</h1>
                 </a>
             </div>
@@ -217,13 +219,15 @@
         </div>
     </footer>
 </body>
+<script src="../js/api.js"></script>
 <script  src="../js/header&nav.js"></script>
-<script  src="../js/username.js"></script>
 <script>
     const container = document.getElementById("container")
     const buttondiv = document.getElementById("buttonsdiv")
+    const token =localStorage.getItem("token")
 ///Search
-
+const name=localStorage.getItem("name")
+    h4username.innerHTML=name
 
 const newfuncforfilter=(order)=>{
 let pages;
@@ -231,9 +235,9 @@ let fetchdata;
 function forpage(pnum){
     let api;
    if(order!=null){
-    api=`https://clever-crow-belt.cyclic.app/products?page=${pnum}&limit=12&sort=${order}`
+    api=`${baseurl}/products?page=${pnum}&limit=12&sort=${order}`
    }else{
-    api=`https://clever-crow-belt.cyclic.app/products?page=${pnum}&limit=12`
+    api=`${baseurl}/products?page=${pnum}&limit=12`
    }
     fetch(`${api}`, {
     }).then((res) => res.json()).then((data) => {
@@ -308,7 +312,7 @@ forpage(pnum=1)
     }
     function functionforaddTocart(e){
         let obj=
-        fetch(`https://clever-crow-belt.cyclic.app/cart/add`,{
+        fetch(`${baseurl}/cart/add`,{
         method:"POST",
         headers:{
             "Content-Type":"application/json",
@@ -324,18 +328,19 @@ forpage(pnum=1)
         })
         }).then((res)=>res.json()).then((data)=>{
             console.log(data)
+            Swal.fire(`${data.msg}`)
         }).catch((err)=>console.log(err))
     }
    
 
     let formdata=document.querySelector("form")
-    formdata.addEventListener("submit",(e)=>{
+    formdata.addEventListener("input",(e)=>{
         e.preventDefault();
         let Formby=formdata.search.value;
         console.log(Formby)
         console.log(fetchdata)
         let Searched=fetchdata.filter((ele)=>{
-            if((ele.title.toUpperCase().includes(Formby.toUpperCase())==true)||(ele.price.includes(Formby)==true)||(ele.category.toUpperCase().includes(Formby.toUpperCase())==true)){
+            if((ele.title.toUpperCase().includes(Formby.toUpperCase())==true)||(ele.price.includes(Formby)==true)||(ele.category.toUpperCase().includes(Formby.toUpperCase())==true)||(ele.desc.toUpperCase().includes(Formby.toUpperCase())==true)){
                 return true
             }else {
                 return false 
